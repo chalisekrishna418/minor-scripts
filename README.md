@@ -8,3 +8,4 @@ gitlab_draft_sync			continuous					not done
 sftp_account				complete					not done
 sql_dump					complete					complete
 SVN_backup					not deployed				complete
+virtualhost					in plan						-
