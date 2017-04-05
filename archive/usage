@@ -1,0 +1,9 @@
+To use this you need to place a file named lists.txtwith the list of directories you need to archive..
+
+Then you need to also manage permission for the tar file. for this you need to edit 
+
+permission_cmd = "chown -R ci:ci " + dirf
+
+change ci:ci to the user:group you want to change the permission to
+
+This will create tar.gz archive. the other client end script is to download those tar files recursively.
