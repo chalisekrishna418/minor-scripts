@@ -13,6 +13,8 @@ sudo su
 #necessary details
 
 file_location="/home/wp/public_html/yell/"
+
+
 cd $file_location
 pwd
 whoami
