@@ -18,4 +18,5 @@ pwd
 whoami
 tar -zcvf ../project.tar.gz .
 mv ../project.tar.gz .
-
+DBNAME=`cat wp-config.php | grep DB_NAME | cut -d \' -f 4`
+mysqldump $DBNAME > project.sql
