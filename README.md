@@ -16,4 +16,5 @@ sql_dump					complete					complete
 
 SVN_backup					not deployed				complete
 
-virtualhost					in plan						-
+site-migration					complete				not done
+				-
