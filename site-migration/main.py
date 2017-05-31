@@ -5,6 +5,7 @@ import os
 
 ss_script_file="/home/krishna/scripts/site-migration/server.sh"
 cs_script_file="/home/krishna/scripts/site-migration/client.sh"
+finalize_script_file="/home/krishna/scripts/site-migration/finalize.sh"
 
 def get_source_essentials():
 	source_server_key_loc=raw_input("Enter the source server keyfile location: ")
@@ -18,8 +19,8 @@ def get_client_essentials():
 	client_server_hostname=raw_input("Enter the client server hostname: ")
 	return cskl, csu, csh
 
-def create_ssh_command(sskl, ssu, ssh, ss_script_file):
-	command = "ssh -i " + sskl + " " + ssu + "@" + ssh + " 'bash -s' < "+ ss_script_file
+def create_ssh_command(skl, su, sh, script_file):
+	command = "ssh -i " + skl + " " + su + "@" + sh + " 'bash -s' < "+ script_file
 	print command
 	return command
 
@@ -33,6 +34,8 @@ def main():
 	execute_command(ss_command)
 	cs_command = create_ssh_command(cskl, csu, csh, cs_script_file)
 	execute_command(cs_command)
+	final_command = create_ssh_command(cskl, csu, csh, finalize_script_file)
+	execute_command(final_command)
 
 if __name__ == '__main__':
      main()
