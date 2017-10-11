@@ -24,6 +24,20 @@ def create_ssh_command(skl, su, sh, script_file):
 	print command
 	return command
 
+def ask_for_download():
+	choice = raw_input("Do you want to download the files to your PC (y/n): ");
+	if(choice == "y"):
+		return true
+	if(choice == "n"):
+		return false
+	else:
+		print ("Invalid Input!!! \n Please Enter (y/n): ")
+		ask_for_download()
+
+def download_files(url, files)
+	command = "wget " + url + " project." + files
+	os.system("")
+
 def execute_command(command):
 	os.system(command)
 
@@ -34,6 +48,8 @@ def main():
 	execute_command(ss_command)
 	cs_command = create_ssh_command(cskl, csu, csh, cs_script_file)
 	execute_command(cs_command)
+
+	choice = ask_for_download()
 	final_command = create_ssh_command(cskl, csu, csh, finalize_script_file)
 	execute_command(final_command)
 
