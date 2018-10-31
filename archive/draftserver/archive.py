@@ -1,5 +1,8 @@
 import os,datetime
 
+user=""
+group=""
+
 def read_files():
 	file = open('lists.txt','r')
 	for i,line in enumerate(file):
@@ -13,7 +16,7 @@ def make_tar(line):
 	print(command)
 	output = os.system(command)
 	print(output)
-	permission_cmd = "chown -R ci:ci " + dirf
+	permission_cmd = "chown -R "+ user + ":" + group + " " + dirf
 	output1= os.system(command)
 	print "tarfile of " + dirf + "created"
 	
